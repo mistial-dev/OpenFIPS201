@@ -3,24 +3,25 @@
 
   <property name="VERSION_MAJOR" value="1"/>
   <property name="VERSION_MINOR" value="10"/>
-  <property name="VERSION_REVISION" value="2"/>
+  <property name="VERSION_REVISION" value="openphy-r1"/>
   <property name="SDK_BASE" value="tools/sdk"/>
   <property name="BUILD_SDK" value="${SDK_BASE}/jc310"/>
-  <property name="TARGET_SDK" value="${SDK_BASE}/jc304"/>
+  <property name="TARGET_SDK" value="3.0.5"/>
 
-  <property name="gp.version" value="gp221"/>
+  <!-- Use class-only GP API jar by default for JDK11+ compatibility. -->
+  <property name="gp.version" value="gp211"/>
 
   <property name="jc.home" value="${BUILD_SDK}"/>
   <property name="gp.home" value="${basedir}/tools/sdk/${gp.version}"/>
   <property name="gp.exportjar" value="${gp.home}/${gp.version}.jar"/>
   
   <property name="build.version" value="${VERSION_MAJOR}.${VERSION_MINOR}"/>
-  <property name="build.sourcepath" value="src"/>
+  <property name="build.sourcepath" value="src/com/makina/security/openfips201"/>
   <property name="build.outputpath" value="build/bin"/>
   <property name="build.outputfile" value="OpenFIPS201-v${VERSION_MAJOR}_${VERSION_MINOR}_${VERSION_REVISION}.cap"/>
   <property name="build.outputfile_debug" value="OpenFIPS201-v${VERSION_MAJOR}_${VERSION_MINOR}_${VERSION_REVISION}-DEBUG.cap"/>
   <property name="docs.outputpath" value="build/docs"/>
-  <property name="docs.classpath" value="${BUILD_SDK}/lib/api_classic-3.0.4.jar;${gp.exportjar}"/>
+  <property name="docs.classpath" value="${BUILD_SDK}/lib/api_classic-3.0.5.jar;${gp.exportjar}"/>
 
   <target name="clean">
     <delete dir="${build.outputpath}"/>
